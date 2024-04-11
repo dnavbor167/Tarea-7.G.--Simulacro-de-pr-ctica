@@ -13,4 +13,7 @@ import java.time.LocalDate;
 public record Precipitacion(LocalDate fecha, String estacionMeteorologica, 
         String provincia, double precipitacion) {
 
+    //PODRIAMOS USAR @JsonProperty("Nombre que está en el fichero")
+    //ESTO SIRVE PARA LEER JSON Y EN LA VARIABLE LE HEMOS PUESTO 
+    //OTRO NOMBRE O EN OTRO ORDEN
 }
