@@ -4,6 +4,7 @@
 package daw;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -38,10 +39,8 @@ public class Main {
 
         //Usando API Stream, muestra por consola el registro que tiene
         //la mayor precipitación.
-        double mayorPrecipitacion = lista.stream()
-                .mapToDouble((p) -> p.precipitacion())
-                .max()
-                .getAsDouble();
+        Precipitacion mayorPrecipitacion = lista.stream()
+                .max(Comparator.comparingDouble(p->p.precipitacion())).get();
         System.out.println("\nLa mayor precipitación es: " + mayorPrecipitacion);
 
         //Usando API Stream, muestra por consola el número de 
